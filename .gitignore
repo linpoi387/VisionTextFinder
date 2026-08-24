@@ -1,0 +1,17 @@
+models/
+vendor/onnxruntime-web/
+vendor/opencv-js/
+vendor/sdk/
+vendor/js-yaml/
+vendor/clipper-lib/
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+
+# VSCode
+.vscode/

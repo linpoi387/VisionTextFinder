@@ -1,0 +1,2 @@
+# 批次檔一律以 CRLF 簽出，避免 cmd.exe 對 LF-only 檔案的解析問題
+*.bat text eol=crlf

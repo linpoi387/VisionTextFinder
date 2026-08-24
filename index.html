@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>文字雷達｜PaddleOCR 圖片文字辨識</title><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <main class="app-shell">
+    <header><div class="brand-mark">⌕</div><div><p class="eyebrow">PADDLEOCR · LOCAL BACKEND</p><h1>文字雷達</h1></div><p class="tagline">在圖片的每個字裡，找到你要的那一句。</p></header>
+    <section class="controls" aria-label="搜尋設定">
+      <label class="target-label">想找的文字<input id="targetText" type="search" placeholder="例如：訂單編號、王小明、2026" autocomplete="off" /></label>
+      <label class="option">比對模式<select id="matchMode"><option value="exact">精確比對</option><option value="loose">忽略空白與大小寫</option><option value="fuzzy">容許少量辨識誤差</option></select></label>
+      <label class="option"><input id="verified" type="checkbox" /> 擴大搜尋（較慢）</label>
+      <label class="option">最低信心度 <span id="threshValue">0.60</span><input id="scoreThresh" type="range" min="0" max="1" step="0.05" value="0.6" /></label>
+      <button id="findButton" class="primary" disabled>辨識並標記</button>
+    </section>
+    <section id="dropZone" class="drop-zone" tabindex="0" role="button" aria-label="上傳圖片"><input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/bmp" hidden /><div class="upload-icon">↑</div><strong>拖放圖片到這裡</strong><span>或點擊選擇 PNG、JPG、WEBP、BMP 圖片</span></section>
+    <section id="workspace" class="workspace hidden"><div class="image-panel"><div class="panel-head"><h2>辨識畫面</h2><span id="imageInfo"></span></div><div class="canvas-wrap"><canvas id="resultCanvas"></canvas></div></div><aside class="results-panel"><div class="panel-head"><h2>搜尋結果</h2><span id="countBadge" class="count">尚未辨識</span></div><div id="status" class="status">上傳圖片、輸入想找的文字，然後開始辨識。</div><ol id="resultList" class="result-list"></ol><button id="downloadButton" class="secondary hidden">下載標記後圖片</button></aside></section>
+  </main>
+  <footer>圖片僅傳送至此電腦上的 PaddleOCR 後端處理，不會傳送到外部 OCR API。</footer>
+  <script type="module" src="app.js"></script>
+</body></html>
