@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="zh-Hant">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>文字雷達｜PaddleOCR 圖片文字辨識</title><link rel="stylesheet" href="style.css" /></head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>文字雷達｜PaddleOCR 圖片文字辨識</title><link rel="stylesheet" href="style.css" /><script type="importmap">{"imports":{"@paddleocr/paddleocr-js":"/vendor/sdk/dist/index.mjs","@techstark/opencv-js":"/vendor/opencv-shim.mjs","onnxruntime-web":"/vendor/onnxruntime-web/dist/ort.min.mjs","js-yaml":"/vendor/js-yaml/js-yaml.mjs","clipper-lib":"/vendor/clipper-lib/clipper.mjs"}}</script></head>
 <body>
   <main class="app-shell">
-    <header><div class="brand-mark">⌕</div><div><p class="eyebrow">PADDLEOCR · LOCAL BACKEND</p><h1>文字雷達</h1></div><p class="tagline">在圖片的每個字裡，找到你要的那一句。</p></header>
+    <header><div class="brand-mark">⌕</div><div><p class="eyebrow">PADDLEOCR · IN YOUR BROWSER</p><h1>文字雷達</h1></div><p class="tagline">在圖片的每個字裡，找到你要的那一句。</p></header>
     <section class="controls" aria-label="搜尋設定">
       <label class="target-label">想找的文字<input id="targetText" type="search" placeholder="例如：訂單編號、王小明、2026" autocomplete="off" /></label>
       <label class="option">比對模式<select id="matchMode"><option value="exact">精確比對</option><option value="loose">忽略空白與大小寫</option><option value="fuzzy">容許少量辨識誤差</option></select></label>
@@ -15,6 +15,6 @@
     <section id="cameraPanel" class="camera-panel hidden" aria-label="相機預覽"><div class="panel-head"><h2>相機預覽</h2><button id="closeCameraButton" class="icon-button" type="button" aria-label="關閉相機">關閉</button></div><div class="video-wrap"><video id="cameraVideo" autoplay playsinline></video></div><div class="camera-actions"><button id="captureButton" class="primary" type="button">拍照並辨識</button></div><p id="cameraStatus" class="camera-status">請允許瀏覽器使用相機。</p><canvas id="captureCanvas" class="hidden"></canvas></section>
     <section id="workspace" class="workspace hidden"><div class="image-panel"><div class="panel-head"><h2>辨識畫面</h2><span id="imageInfo"></span></div><div class="canvas-wrap"><canvas id="resultCanvas"></canvas></div></div><aside class="results-panel"><div class="panel-head"><h2>搜尋結果</h2><span id="countBadge" class="count">尚未辨識</span></div><div id="status" class="status">上傳圖片、輸入想找的文字，然後開始辨識。</div><ol id="resultList" class="result-list"></ol><button id="downloadButton" class="secondary hidden">下載標記後圖片</button></aside></section>
   </main>
-  <footer>圖片僅傳送至此電腦上的 PaddleOCR 後端處理，不會傳送到外部 OCR API。</footer>
+  <footer>圖片只會在你的瀏覽器內由 PaddleOCR 處理，不會上傳至伺服器或外部 OCR API。</footer>
   <script type="module" src="app.js"></script>
 </body></html>

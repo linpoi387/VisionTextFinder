@@ -1,9 +1,6 @@
-models/
-vendor/onnxruntime-web/
-vendor/opencv-js/
-vendor/sdk/
-vendor/js-yaml/
-vendor/clipper-lib/
+vendor/opencv-js/opencv.js.bak
+vendor/opencv-js/opencv.js.patched
+vendor/opencv-js/opencv-beautified.js
 # Virtual Environment
 .venv/
 venv/
