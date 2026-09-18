@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vision-text-finder
+    runtime: python
+    region: singapore
+    plan: 1c-2g
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn paddle_server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+    disk:
+      name: paddleocr-model-cache
+      mountPath: /opt/render/project/src/.paddle-cache
+      sizeGB: 1
