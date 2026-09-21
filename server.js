@@ -3,7 +3,6 @@ import { stat, rename, mkdir, unlink } from 'node:fs/promises';
 import { createReadStream, createWriteStream } from 'node:fs';
 import { extname, join, normalize, resolve, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { exec } from 'node:child_process';
 import https from 'node:https';
 
 const ROOT = fileURLToPath(new URL('.', import.meta.url));
@@ -208,7 +207,6 @@ function startServer() {
     const url = `http://127.0.0.1:${port}/`;
     print(`伺服器已啟動：${url}`);
     print('關閉此視窗即可停止。');
-    exec(`start "" "${url}"`, { shell: 'cmd.exe' }, () => {});
   });
 }
 
