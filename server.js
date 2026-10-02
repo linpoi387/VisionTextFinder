@@ -39,6 +39,16 @@ const RESOURCES = [
     minBytes: 20000000
   },
   {
+    file: 'models/PP-OCRv6_tiny_det_onnx_infer.tar',
+    url: 'https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv6_tiny_det_onnx_infer.tar',
+    minBytes: 1500000
+  },
+  {
+    file: 'models/PP-OCRv6_tiny_rec_onnx_infer.tar',
+    url: 'https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv6_tiny_rec_onnx_infer.tar',
+    minBytes: 4000000
+  },
+  {
     file: 'vendor/sdk/dist/index.mjs',
     url: 'https://cdn.jsdelivr.net/npm/@paddleocr/paddleocr-js@0.4.2/dist/index.mjs',
     minBytes: 60000
